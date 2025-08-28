@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malome Sello | Mmasemanodi</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+<style>
+  body { font-family: 'Inter', sans-serif; background-color: #fdfbf6; color: #333; }
+  h1,h2,h3 { font-family: 'Playfair Display', serif; }
+  .gold { color: #d4af37; }
+  .float { animation: float 4s ease-in-out infinite; }
+  @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+  .counter { font-weight: 700; font-size: 3rem; }
+  .spark { position: absolute; width: 8px; height: 8px; background-color: #d4af37; border-radius: 50%; animation: sparkAnim 2s infinite; }
+  @keyframes sparkAnim {
+    0% { transform: translate(0,0) scale(1); opacity: 1; }
+    50% { transform: translate(-10px,-20px) scale(1.5); opacity: 0.6; }
+    100% { transform: translate(0,0) scale(1); opacity: 1; }
+  }
+  .bar {
+    height: 6px;
+    background: linear-gradient(to right, #d4af37, #b8860b);
+    width: 0;
+    border-radius: 3px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" class="w-12 h-12 float">
+        <defs>
+          <linearGradient id="goldGradientLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d4af37"/>
+            <stop offset="100%" stop-color="#b8860b"/>
+          </linearGradient>
+        </defs>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+              font-family="Playfair Display, serif" font-size="60" font-weight="700"
+              fill="url(#goldGradientLogo)" stroke="#fff" stroke-width="0.5">MS</text>
+      </svg>
+      <h1 class="text-2xl font-serif gold">Mmasemanodi</h1>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div class="relative">
+      <button id="menuButton" class="flex items-center space-x-2 font-medium px-4 py-2 rounded-lg hover:bg-gold/20 transition">
+        Menu
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <ul id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible transition-all duration-300">
+        <li><a href="#about" class="block px-4 py-2 hover:bg-gold/20">About</a></li>
+        <li><a href="#showcase" class="block px-4 py-2 hover:bg-gold/20">Animals</a></li>
+        <li><a href="#stats" class="block px-4 py-2 hover:bg-gold/20">Stats</a></li>
+        <li><a href="#contact" class="block px-4 py-2 hover:bg-gold/20">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuButton = document.getElementById('menuButton');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  menuButton.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('opacity-100');
+    dropdownMenu.classList.toggle('invisible');
+  });
+</script>
+
+<!-- Hero Section -->
+<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+  <img src="file:///C:/Users/User%201/Desktop/Automatic_Licenseplate_recognition_and_extraction/cow2.jpeg" alt="South African Farm" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-white/50"></div>
+
+  <div class="relative z-10 text-center px-4">
+    <h1 class="text-4xl md:text-6xl gold mb-4" data-aos="fade-up">Malome Sello</h1>
+    <p class="text-lg md:text-2xl italic mb-6" data-aos="fade-up" data-aos-delay="200">
+      Part of Mmasemanodi — Empowering South African Farmers
+    </p>
+    <a href="#about" class="inline-block px-6 py-3 rounded-xl bg-gold text-white font-bold hover:bg-yellow-600 transition" data-aos="fade-up" data-aos-delay="400">
+      Discover
+    </a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 px-6 md:px-20 grid md:grid-cols-2 gap-12 items-center">
+  <img src="file:///C:/Users/User%201/Desktop/Automatic_Licenseplate_recognition_and_extraction/malome.jpeg" alt="Premium Cattle" class="rounded-2xl shadow-xl" data-aos="fade-right">
+  <div data-aos="fade-left">
+    <h2 class="text-4xl gold mb-6">About Malome Sello</h2>
+    <p class="text-lg leading-relaxed mb-4">
+      Malome Sello is part of <strong>Mmasemanodi</strong>, a project dedicated to developing and supporting premium livestock farmers across South Africa. Through innovative training and hands-on guidance, the project helps farmers deliver quality cattle, sheep, and goats while building sustainable practices.
+    </p>
+    <p class="text-lg leading-relaxed">
+      Malome is committed to excellence, ensuring every animal is nurtured and managed professionally, contributing to the growth of Mmasemanodi and the empowerment of local farmers.
+    </p>
+  </div>
+</section>
+
+<!-- Showcase Section -->
+<section id="showcase" class="py-20 px-6 md:px-20 bg-[#fcfaf4]">
+  <h2 class="text-4xl gold text-center mb-10" data-aos="fade-up">Premium Livestock Showcase</h2>
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+    <div class="relative group overflow-hidden rounded-xl shadow-lg" data-aos="zoom-in">
+      <img src="file:///C:/Users/User%201/Desktop/Automatic_Licenseplate_recognition_and_extraction/cow1.jpg" class="group-hover:scale-105 transition duration-500" alt="Cattle"/>
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+        <p class="text-white text-lg font-bold">Handpicked Cattle</p>
+      </div>
+    </div>
+    <div class="relative group overflow-hidden rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+      <img src="file:///C:/Users/User%201/Desktop/Automatic_Licenseplate_recognition_and_extraction/chick.jpg" class="group-hover:scale-105 transition duration-500" alt="Sheep"/>
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+        <p class="text-white text-lg font-bold">Premium Poultry</p>
+      </div>
+    </div>
+    <div class="relative group overflow-hidden rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="400">
+      <img src="file:///C:/Users/User%201/Desktop/Automatic_Licenseplate_recognition_and_extraction/sheep.jpg" class="group-hover:scale-105 transition duration-500" alt="Goat"/>
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+        <p class="text-white text-lg font-bold">Selected Sheep</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section with animated spark and bar -->
+<section id="stats" class="py-20 px-6 md:px-20 text-center grid grid-cols-1 md:grid-cols-3 gap-10">
+  <!-- Farm Card -->
+  <div class="bg-white rounded-2xl p-10 shadow-md relative overflow-hidden" data-aos="fade-up">
+    <div class="spark" style="top:10px; left:10px;"></div>
+    <div class="spark" style="bottom:15px; right:20px;"></div>
+    <div class="counter text-5xl font-bold" data-target="1">0</div>
+    <p class="text-lg text-gray-600 mt-2">Farm Project</p>
+    <div class="bar" data-width="100"></div>
+  </div>
+
+  <!-- Farmers Trained -->
+  <div class="bg-white rounded-2xl p-10 shadow-md relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+    <div class="spark" style="top:5px; right:15px;"></div>
+    <div class="counter text-5xl font-bold" data-target="100">0</div>
+    <p class="text-lg text-gray-600 mt-2">Farmers Trained</p>
+    <div class="bar" data-width="100"></div>
+  </div>
+
+  <!-- Livestock Types -->
+  <div class="bg-white rounded-2xl p-10 shadow-md relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+    <div class="spark" style="bottom:10px; left:20px;"></div>
+    <div class="counter text-5xl font-bold" data-target="3">0</div>
+    <p class="text-lg text-gray-600 mt-2">Livestock Types</p>
+    <div class="bar" data-width="60"></div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 text-center px-6">
+  <h2 class="text-4xl gold mb-6" data-aos="fade-up">Connect with Malome Sello</h2>
+  <p data-aos="fade-up" class="mb-6">Be part of Mmasemanodi’s mission to develop premium farmers across South Africa.</p>
+  <a href="mailto:info@mmasemanodi.co.za" class="inline-block bg-gold text-white font-bold px-8 py-3 rounded-xl hover:bg-yellow-600 transition" data-aos="zoom-in">Contact</a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#f8f7f4] py-6 text-center text-sm text-gray-500">
+  © 2025 Mmasemanodi. Malome Sello – Empowering South African Farmers.
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  // Animated Counters
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / 100;
+      if(count < target){
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    }
+    updateCount();
+  });
+
+  // Animate bars on load
+  const bars = document.querySelectorAll('.bar');
+  bars.forEach(bar => {
+    const width = bar.getAttribute('data-width');
+    setTimeout(() => { bar.style.width = width + '%'; bar.style.transition = 'width 1.5s ease'; }, 500);
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
